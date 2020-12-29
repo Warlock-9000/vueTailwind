@@ -39,6 +39,11 @@ const routes = [
         path: "/restorePass",
         component: () => import("@/views/RestorePassword")
     },
+    {
+        name: 'myIp',
+        path: '/my-ip',
+        component: ()=> import("@/views/MyIp")
+    }
 ]
 
 const router = createRouter({
