@@ -14,6 +14,9 @@ export default createStore({
     getters: {
         auth(state) {
             return state.user
+        },
+        isLogin(state){
+            return state.user.loggedIn
         }
     }
 })

@@ -14,7 +14,7 @@
               <div>
                 <label for="email-address" class="sr-only">Email address</label>
                 <input id="email-address" name="email" type="email" autocomplete="email" required
-                       class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                       class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                        placeholder="Email address"
                        v-model="email"
                 >
@@ -30,7 +30,6 @@
               </button>
             </div>
           </div>
-          <pre>{{ email }}</pre>
         </div>
       </div>
     </template>
@@ -45,7 +44,6 @@
               <router-link class="mt-6 text-xl text-center text-blue-400" to="/">Вернуться на главную</router-link>
             </div>
           </div>
-          <pre>{{ email }}</pre>
         </div>
       </div>
     </template>

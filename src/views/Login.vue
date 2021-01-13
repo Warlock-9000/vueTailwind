@@ -1,22 +1,5 @@
 <template>
   <div>
-    <!--
-    This example requires Tailwind CSS v2.0+
-
-    This example requires some changes to your config:
-
-
-    // tailwind.config.js
-    module.exports = {
-      // ...
-      plugins: [
-        // ...
-        require('@tailwindcss/forms'),
-      ]
-    }
-
-
-  -->
     <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div class="max-w-md w-full space-y-8">
         <div>
@@ -66,7 +49,6 @@
             </button>
           </div>
         </div>
-        <pre>{{ user }}</pre>
       </div>
     </div>
 
@@ -97,13 +79,11 @@ export default {
       let isEmailValid = this.emailValidate(this.user.email)
 
       if (isEmailValid) {
-        alert('email валиден')
         this.$store.commit('SET_STATUS', true);
         localStorage.Islogin = true
-        this.$router.push('/')
+        this.$router.push({name: 'Home'})
       } else {
         alert('email невалиден')
-
       }
     },
     emailValidate(email) {
