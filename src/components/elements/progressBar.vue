@@ -5,7 +5,7 @@
   >
     <div
         class="h-full progressbar"
-        :class="[`bg-${color}-500`, {'absolute top-0': indeterminate}, {'rounded-full': rounded}]"
+        :class="[getBackGroundColor, {'absolute top-0': indeterminate}, {'rounded-full': rounded}]"
         role="progressbar"
         :style="{width: `${percentage}%`}"
         :aria-valuenow="percentage"
@@ -21,6 +21,7 @@
 <script>
 export default {
   inheritAttrs: false,
+  data: () => ({}),
   props: {
     color: {
       type: String,
@@ -35,6 +36,21 @@ export default {
       default: true
     },
     indeterminate: Boolean
+  },
+  computed:{
+    getBackGroundColor: ()=>{
+      return 'bg-green-500'
+
+
+      // почему это не рабоает? TODO: Спросить Рому и пофиксить.
+ /*     let color = this.color
+      let colors = {
+        'green':'bg-green-500',
+        'red':'bg-red-500'
+      }
+      if (!(this.color in colors)) return 'bg-green-500'
+      return colors[color]*/
+    }
   }
 };
 </script>

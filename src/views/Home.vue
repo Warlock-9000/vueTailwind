@@ -3,7 +3,7 @@
     <div class="flex justify-center items-center w-screen h-screen" v-if="!isReady">
       <div class="w-1/5 text-center select-none">
         <p class="text-3xl mb-10">Загрузка</p>
-        <progress-bar :percentage="percentage"/>
+        <progress-bar :percentage="percentage" color="green"/>
       </div>
     </div>
 
@@ -60,19 +60,18 @@
 
 <script>
 import progressBar from "@/components/elements/progressBar";
+import {format} from "date-fns"
 
 export default {
   name: 'Home',
   components: {
     progressBar
   },
-  data: () => {
-    return {
-      isLogin: false,
-      percentage: 0,
-      isReady: false
-    }
-  },
+  data: () => ({
+    isLogin: false,
+    percentage: 0,
+    isReady: false
+  }),
   created() {
     if (localStorage.Islogin) {
       this.isLogin = localStorage.Islogin;
@@ -90,24 +89,20 @@ export default {
 
     runProgressBar(time) {
       let interval = time / 100
-      let frame = () => {
+      let intervalDescriptor = setInterval(() => {
         if (this.percentage >= 100) {
           clearInterval(intervalDescriptor)
           this.isReady = true
         } else {
           this.percentage++
+          console.log(this.percentage)
         }
-      }
-      let intervalDescriptor = setInterval(frame, interval)
+      }, interval)
     }
   },
   computed: {
     getCurrentDate() {
-      let today = new Date();
-      let dd = String(today.getDate()).padStart(2, '0');
-      let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-      let yyyy = today.getFullYear();
-      return mm + '/' + dd + '/' + yyyy;
+      return  format(new Date(), 'dd/MM/yyyy')
     }
   }
 }

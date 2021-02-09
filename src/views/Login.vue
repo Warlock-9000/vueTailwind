@@ -59,14 +59,12 @@
 
 export default {
   name: "Login",
-  data: () => {
-    return {
-      user: {
-        email: '',
-        password: ''
-      }
+  data: () => ({
+    user: {
+      email: '',
+      password: ''
     }
-  },
+  }),
   methods: {
     hoverStatement(e) {
       console.info(e)

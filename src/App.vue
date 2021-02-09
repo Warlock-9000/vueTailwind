@@ -12,6 +12,8 @@
       <router-link to="/restorePass">Restore Password</router-link>
       |
       <router-link :to="{name:'myIp'}"> Show my IP</router-link>
+      |
+      <router-link :to="{name:'infinityScroll'}">infinityScroll</router-link>
     </div>
     <div class="mr-20">
       <div v-if="!isLogin">
@@ -49,7 +51,7 @@ export default {
       this.$router.push({name: 'Login'})
     },
     login() {
-      alert('Заходи дарагой, гостем будешь')
+      this.$router.push({name: 'Login'})
     },
     signUp() {
       alert('На регистратуру проходим')

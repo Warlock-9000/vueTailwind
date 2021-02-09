@@ -4,4 +4,17 @@ import router from './router'
 import './assets/tailwind.css'
 import store from './store'
 
-createApp(App).use(store).use(router).mount('#app')
+import { ObserveVisibility } from 'vue-observe-visibility';
+
+createApp(App)
+    .use(store)
+    .use(router)
+    .directive('observe-visibility', {
+        beforeMount: (el, binding, vnode) => {
+            vnode.context = binding.instance;
+            ObserveVisibility.bind(el, binding, vnode);
+        },
+        update: ObserveVisibility.update,
+        unmounted: ObserveVisibility.unbind,
+    })
+    .mount('#app')

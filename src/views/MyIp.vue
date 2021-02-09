@@ -8,11 +8,9 @@
 <script>
 export default {
   name: "myIp",
-  data: () => {
-    return {
-      ip: ''
-    }
-  },
+  data: () => ({
+    ip: ''
+  }),
   mounted() {
     this.getIPFromAmazon()
     // this.myBicycle()

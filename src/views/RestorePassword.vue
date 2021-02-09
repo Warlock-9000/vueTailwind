@@ -54,12 +54,10 @@
 <script>
 export default {
   name: "RestorePassword",
-  data: () => {
-    return {
-      email: '',
-      isRestore: false
-    }
-  },
+  data: () => ({
+    email: '',
+    isRestore: false
+  }),
   methods: {
     restore() {
       let isEmailValid = this.emailValidate(this.email)
