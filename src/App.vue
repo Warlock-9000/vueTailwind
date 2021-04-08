@@ -3,18 +3,22 @@
   <div id="nav"
        class="overflow-hidden fixed top-10 left-10 w-full font-bold text-gray-700 flex justify-between select-none">
     <div>
-      <router-link to="/">Home</router-link>
+      <router-link :to="{name: 'Home'}">Home</router-link>
       |
-      <router-link to="/about">About</router-link>
+      <router-link :to="{name: 'About'}">About</router-link>
       |
-      <router-link to="/login">Login Page</router-link>
+      <router-link :to="{name: 'Login'}">Login Page</router-link>
       |
-      <router-link to="/restorePass">Restore Password</router-link>
+      <router-link :to="{name: 'RestorePassword'}">Restore Password</router-link>
       |
       <router-link :to="{name:'myIp'}"> Show my IP</router-link>
       |
       <router-link :to="{name:'infinityScroll'}">infinityScroll</router-link>
     </div>
+    <div v-if="this.$store.getters.getEmail">
+      <p>Email:{{this.$store.getters.getEmail}}</p>
+    </div>
+
     <div class="mr-20">
       <div v-if="!isLogin">
         <button
@@ -39,7 +43,7 @@
     </div>
   </div>
 
-  <router-view class="px-5"/>
+  <router-view class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"/>
 
 </template>
 <script>

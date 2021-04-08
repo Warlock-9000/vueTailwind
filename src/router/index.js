@@ -1,16 +1,15 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
-import guest from './middleware/guest'
-import auth from './middleware/auth'
-import store from '../store'
-import middlewarePipeline from './middlewarePipeline'
-
+import guest from '@/router/middleware/guest'
+import auth from '@/router/middleware/auth'
+import store from '@/store'
+import middlewarePipeline from '@/router/middlewarePipeline'
 
 const Home = () => import(/* webpackChunkName: "Home" */ '@/views/Home.vue')
 const About = () => import(/* webpackChunkName: "About" */ '@/views/About.vue')
 const Login = () => import(/* webpackChunkName: "Login" */ '@/views/Login.vue')
 const RestorePassword = () => import(/* webpackChunkName: "RestorePassword" */ '@/views/RestorePassword.vue')
 const MyIp = () => import(/* webpackChunkName: "MyIp" */ '@/views/MyIp.vue')
-const InfinityScroll = () => import(/* webpackChunkName: "infinityScroll" */ '@/views/InfinityScroll')
+const InfinityScroll = () => import(/* webpackChunkName: "infinityScroll" */ '@/views/InfinityScroll.vue')
 
 const routes = [
     {

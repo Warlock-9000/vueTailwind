@@ -1,10 +1,11 @@
 import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import './assets/tailwind.css'
-import store from './store'
+import App from '@/App.vue'
+import router from '@/router'
+import '@/assets/tailwind.css'
+import store from '@/store'
 
 import { ObserveVisibility } from 'vue-observe-visibility';
+import './assets/tailwind.css'
 
 createApp(App)
     .use(store)

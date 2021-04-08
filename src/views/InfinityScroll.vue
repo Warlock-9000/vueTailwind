@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div>
 
     <div class="border-dashed border-4 border-blue-500 mx-10">
       <p> Скролл через библу</p>

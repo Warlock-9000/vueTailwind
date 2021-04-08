@@ -77,6 +77,7 @@ export default {
       let isEmailValid = this.emailValidate(this.user.email)
 
       if (isEmailValid) {
+        this.$store.commit('SET_EMAIL', this.user.email);
         this.$store.commit('SET_STATUS', true);
         localStorage.Islogin = true
         this.$router.push({name: 'Home'})
@@ -91,3 +92,4 @@ export default {
   }
 }
 </script>
+
