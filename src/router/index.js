@@ -10,6 +10,7 @@ const Login = () => import(/* webpackChunkName: "Login" */ '@/views/Login.vue')
 const RestorePassword = () => import(/* webpackChunkName: "RestorePassword" */ '@/views/RestorePassword.vue')
 const MyIp = () => import(/* webpackChunkName: "MyIp" */ '@/views/MyIp.vue')
 const InfinityScroll = () => import(/* webpackChunkName: "infinityScroll" */ '@/views/InfinityScroll.vue')
+const SignUp = () => import(/* webpackChunkName: "SignUp" */ '@/views/SignUp.vue')
 
 const routes = [
     {
@@ -26,6 +27,16 @@ const routes = [
         path: '/about',
         name: 'About',
         component: About
+    },
+    {
+        name: "SignUp",
+        path: "/signUp",
+        component: SignUp,
+        meta: {
+            middleware: [
+                guest
+            ]
+        }
     },
     {
         name: "Login",

@@ -78,7 +78,11 @@ export default {
     }
   },
   mounted() {
-    this.runProgressBar(3000);
+    if (!this.$store.state.user.loggedIn){
+      this.runProgressBar(3000)
+    }else {
+      this.isReady = true
+    }
   },
   methods: {
     logOut() {

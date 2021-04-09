@@ -1,7 +1,7 @@
 <template>
 
   <div id="nav"
-       class="overflow-hidden fixed top-10 left-10 w-full font-bold text-gray-700 flex justify-between select-none">
+       class="overflow-hidden fixed top-10 left-10 w-full font-bold text-gray-700 flex justify-between select-none bg-white">
     <div>
       <router-link :to="{name: 'Home'}">Home</router-link>
       |
@@ -58,7 +58,7 @@ export default {
       this.$router.push({name: 'Login'})
     },
     signUp() {
-      alert('На регистратуру проходим')
+      this.$router.push({name: 'SignUp'})
     }
   },
   computed: {
